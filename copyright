@@ -1,0 +1,30 @@
+!-------------------------------------------------------------------------------------------
+!
+!
+!
+!
+!
+!	Created by Yunfei Zhao on 12-1-25.
+!  	Copyright 2012 Tsinghua University & RWTH. All rights reserved.
+!	
+!	
+!	In this package, you can use the script 'run_script_using_std_f_frt.m' to run the basic 
+!	process of the model and see the picture of this model, thus you can have a phase difference
+!	distribution in another picture.
+!	
+!	
+!	Also, you can use the script 'find_f_frt_script.m' to find the focal distance which will 
+!	results a minimum RMSE.
+!
+!	
+!	Before you run the scripts or scripts you create yourself, you must modify the config file
+!	which is named 'input.txt'. You can see the explanatort note in detail in that file.
+!	
+!	
+!	Good Luck and Happy New Chinese Year!!
+!
+!
+!
+!
+!
+!-------------------------------------------------------------------------------------------

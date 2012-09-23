@@ -1,0 +1,38 @@
+12
+1.0
+1.58492
+4.8
+10.0
+6.3280e-04
+inv_dist_wgt
+
+/*
+	Input Values.......
+	1.  num_lgts: default num is 12. (Can not change any more!)
+    2.  n1: refractive index of air.
+	3.  n2: refractive index of len.
+	4.  d: thickness of the len.
+	5.  W: dist from len to the screen.
+	6.  lamda: default value is 632.8e-9*1e3.
+    7.  str_in: method to produce wgts('normal', 'dist_wgt', 'inv_dist_wgt', 'triangle', 'Gauss').
+*/
+
+
+/*
+	    P2    P3
+		(_____)---------------------|P4
+	   /( LEN )						|
+	  / ( LEN )						|
+	 /  ( LEN )						|
+----P1--(--O--)A--------------------B-------------------
+	 \	( LEN )						|
+	  \ ( LEN )						|
+ 	   \( LEN )    					|
+		( LEN )---------------------|
+	Notes:
+		O(0,0) original point
+		P1(0, 50.5206)
+		A(0, -d)
+		B(0, -d-W)
+		Ray: P1-P2-P3-P4
+*/
