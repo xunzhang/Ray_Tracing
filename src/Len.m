@@ -1,13 +1,12 @@
 classdef Len 
     
 	%
-    %	Summary of Len class goes here
-	%		function Len(R_in, k_in, A2_in, A4_in, A6_in, A8_in, Dist_in) is the Constructor
-	%		function cal_y(obj, x) is to cal another para based on input para
+	%  Summary of Len class goes here
+	%    function Len(R_in, k_in, A2_in, A4_in, A6_in, A8_in, Dist_in) is the Constructor
+	%    function cal_y(obj, x) is to cal another para based on input para
 	%		
-	%   Detailed explanation goes below
+	%  Detailed explanation goes below
 	%
-
     properties
         R
         k
@@ -17,7 +16,7 @@ classdef Len
         A8
         Dist
     end
-    
+
     methods
         function obj = Len(R_in, k_in, A2_in, A4_in, A6_in, A8_in, Dist_in)
             obj.R = R_in;
@@ -32,5 +31,6 @@ classdef Len
             asp_y = x ^2 / obj.R / (1 + (1 - (1 + obj.k) * (x / obj.R) ^2) ^0.5) + obj.Dist + obj.A2 * x ^2 + obj.A4 * x ^4 + obj.A6 * x ^6 + obj.A8 * x ^8;
         end
     end
+
 end
 

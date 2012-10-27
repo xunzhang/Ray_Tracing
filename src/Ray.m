@@ -12,10 +12,10 @@ classdef Ray
 	properties
 		n1
 		n2
-		P1 = struct('x',0,'y',0);
-		P2 = struct('x',0,'y',0);
-		P3 = struct('x',0,'y',0);
-		P4 = struct('x',0,'y',0);
+		P1 = struct('x',0,'y',0)
+		P2 = struct('x',0,'y',0)
+		P3 = struct('x',0,'y',0)
+		P4 = struct('x',0,'y',0)
 	end
 
 	methods

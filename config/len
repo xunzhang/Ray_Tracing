@@ -6,6 +6,12 @@
 0
 0
 
-/*
-*	input of len1 paras
-*/
+/* input of len1 paras:
+ * R
+ * K
+ * A2
+ * A4
+ * A6
+ * A8
+ * Dist
+ */
