@@ -7,5 +7,6 @@ clc;
 clear all;
 clc;
 
-[parameter_package, asp_1, asp_2, ray_obj] = Load_Input('../config/input', '../config/len');
+[parameter_package, asp_1, asp_2, ray_obj] = Load_Input('input', 'len');
+
 [f_frt_min, rmse_min_value] = fminsearch(@(f_frt) Find_f_frt_of_Min_Rmse(f_frt, ray_obj, parameter_package, asp_1, asp_2), 50.5206)

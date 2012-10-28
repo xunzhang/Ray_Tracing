@@ -12,10 +12,9 @@
 %  function wave_result = Cal_Wavefront(ray_obj, parameter_package, asp_1, asp_2)
 %
 function wave_result = Cal_Wavefront(f_frt, ray_obj, parameter_package, asp_1, asp_2)
-
+  
   lamda1 = parameter_package.lamda / parameter_package.n1;
   lamda2 = parameter_package.lamda / parameter_package.n2;
-  
   n = parameter_package.n2;
   R1 = asp_1.R;
   R2 = asp_2.R;
@@ -27,12 +26,10 @@ function wave_result = Cal_Wavefront(f_frt, ray_obj, parameter_package, asp_1, a
   %	P1 is never changed
   %
   % P1 = ray_obj.P1; really bad design of fminsearch interface!!!
-  P1 = [0, f_frt];
-  P2 = [ray_obj.P2.x, ray_obj.P2.y];
-  P3 = [ray_obj.P3.x, ray_obj.P3.y];
-  P4 = [ray_obj.P4.x, ray_obj.P4.y];
-  
-  Ray_objj = Ray(P1, P2, P3, P4, parameter_package.n1, parameter_package.n2);
+  P1 = [0, f_frt]
+  P2 = ray_obj.P2
+  P3 = ray_obj.P3
+  P4 = ray_obj.P4
   %
   %	main loop to create Rays and cal the phase difference 
   %
@@ -43,23 +40,17 @@ function wave_result = Cal_Wavefront(f_frt, ray_obj, parameter_package, asp_1, a
     %	cal coords of P2
     %
     P2 = [i,asp_par.cal_y(i)];
-    Ray_objj.P2.x = P2(1);
-    Ray_objj.P2.y = P2(2);
     %
     %	cal coords of P3
     %
-    theta = Ray_objj.refraction(asp_par, 1);
+    theta = ray_obj.refraction(asp_par, 1);
     asp_par = asp_2;
-    P3 = Ray_objj.slove_p3(theta, i, asp_par);
-    Ray_objj.P3.x = P3(1);
-    Ray_objj.P3.y = P3(2);
+    P3 = ray_obj.slove_p3(theta, i, asp_par);
     %
     %	cal coords of P4
     %
-    theta = Ray_objj.refraction(asp_par,2);
-    P4 = Ray_objj.solve_p4(theta, parameter_package.d, parameter_package.W);
-    Ray_objj.P4.x = P4(1);
-    Ray_objj.P4.y = P4(2);
+    theta = ray_obj.refraction(asp_par,2);
+    P4 = ray_obj.solve_p4(theta, parameter_package.d, parameter_package.W); 
     %
     %	cal the phase difference of every ray
     %
